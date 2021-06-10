@@ -7,6 +7,15 @@ footer.bg-primary {
 	display: block;
 }
 
+.modal-content {
+	background-color:  #181f29;
+}
+h5.modal-title {
+	color: red;
+}
+h5.card-title {
+	color: red;
+}
 body {
 	background-image:
 		url("https://cdn02.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_4/H2x1_NSwitch_DeadByDaylight_image1600w.jpg");
@@ -82,8 +91,4 @@ footer .rrss {
 }
 .card {
 	background-color: rgb(25 25 25 / 85%);
-}
-
-div.modal.body{
-	color: black;
 }

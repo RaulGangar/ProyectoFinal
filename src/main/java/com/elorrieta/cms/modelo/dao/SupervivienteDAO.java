@@ -182,12 +182,13 @@ public class SupervivienteDAO {
 	public static boolean insert(Superviviente p) throws Exception {
 		boolean insertado = false;
 		String sql = "INSERT INTO superviviente (nombre,historia,imagen) VALUES (?,?,?); ";
-		try (Connection con = ConnectionHelper.getConnection(); PreparedStatement pst = con.prepareStatement(sql)) {
 
+		try (Connection con = ConnectionHelper.getConnection(); PreparedStatement pst = con.prepareStatement(sql)) {
+			System.out.println(con.prepareStatement(sql));
 			pst.setString(1, p.getNombre());
 			pst.setString(2, p.getHistoria());
 			pst.setString(3, p.getImagen());
-
+			System.out.println(con.prepareStatement(sql));
 			if (pst.executeUpdate() == 1) {
 				insertado = true;
 			}

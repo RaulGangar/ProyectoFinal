@@ -73,11 +73,11 @@ public class SupervivientesEditar extends HttpServlet {
 
 		} catch (Exception e) {
 			request.setAttribute("mensajeTipo", "danger");
-			request.setAttribute("mensaje", "El email esta repetido");
+			request.setAttribute("mensaje", "El nombre esta repetido");
 
 		}
 
-		request.setAttribute("titulo", "Modificar Participante");
+		request.setAttribute("titulo", "Modificar Superviviente");
 		request.setAttribute("participante", p);
 		request.getRequestDispatcher("formulario.jsp").forward(request, response);
 
