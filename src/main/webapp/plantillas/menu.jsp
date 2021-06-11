@@ -33,10 +33,17 @@
 	         </li>
 	         
          </c:if>
+         <c:if test="${usuario_logeado.rol == 2 }">
+	         <li class="nav-item">
+	           <a class="nav-link ${ (param.page eq 'asesinos') ? 'active' : '' }" 
+	              href="backoffice/asesinos-listar">Asesinos</a>
+	         </li>
+	         
+         </c:if>
 
          <li class="nav-item">
            <a class="nav-link" 
-              href="calculadora.jsp">Asesinos</a>
+              href="asesinoslista">Asesinos</a>
          </li>
          
          <li class="nav-item">

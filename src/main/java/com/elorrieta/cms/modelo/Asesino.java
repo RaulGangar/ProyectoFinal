@@ -1,13 +1,13 @@
 package com.elorrieta.cms.modelo;
 
-public class Superviviente {
+public class Asesino {
 
 	private int id;
 	private String nombre;
 	private String historia;
 	private String imagen;
 
-	public Superviviente() {
+	public Asesino() {
 		super();
 		this.id = 0;
 		this.nombre = "";
@@ -15,7 +15,7 @@ public class Superviviente {
 		this.imagen = "https://randomuser.me/api/portraits/men/1.jpg";
 	}
 
-	public Superviviente(String nombre, String apellidos) {
+	public Asesino(String nombre, String apellidos) {
 		this();
 		this.nombre = nombre;
 		this.historia = historia;
@@ -55,7 +55,7 @@ public class Superviviente {
 
 	@Override
 	public String toString() {
-		return "Superviviente [id=" + id + ", nombre=" + nombre + ", historia=" + historia + ", imagen=" + imagen + "]";
+		return "Asesino [id=" + id + ", nombre=" + nombre + ", historia=" + historia + ", imagen=" + imagen + "]";
 	}
 
 }

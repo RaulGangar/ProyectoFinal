@@ -1,10 +1,18 @@
-footer.bg-primary {
+.bg-primary {
 	background-color: #3519962b !important;
 }
 
 .btn-block {
 	width: 100%;
 	display: block;
+}
+
+.btn-primary {
+	background-color: #21252900;
+}
+
+h1 {
+	color: red;
 }
 
 .modal-content {

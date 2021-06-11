@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-import com.elorrieta.cms.modelo.Superviviente;
+import com.elorrieta.cms.modelo.Asesino;
 
 /**
  * Clase encargada relacionar el POJO con la Tabla DAO Data Access Object
@@ -13,18 +13,18 @@ import com.elorrieta.cms.modelo.Superviviente;
  * @author Admin
  *
  */
-public class SupervivienteDAO {
+public class AsesinoDAO {
 
 	/**
-	 * Filtra los supervivientes por nombre, apellidos o email
+	 * Filtra los asesinos por nombre, apellidos o email
 	 * 
 	 * @param palabraBusqueda la palabra a buscar en las 3 columnas
-	 * @return ArrayList con todos los supervivientes filtrados
+	 * @return ArrayList con todos los asesinos filtrados
 	 */
-	public static ArrayList<Superviviente> filtrar(String palabraBusqueda) {
+	public static ArrayList<Asesino> filtrar(String palabraBusqueda) {
 
-		ArrayList<Superviviente> coleccion = new ArrayList<Superviviente>();
-		String sql = " SELECT id, nombre, historia, imagen FROM superviviente " + " WHERE nombre LIKE ?"
+		ArrayList<Asesino> coleccion = new ArrayList<Asesino>();
+		String sql = " SELECT id, nombre, historia, imagen FROM asesino " + " WHERE nombre LIKE ?"
 				+ " ORDER BY id ASC; ";
 
 		try (Connection con = ConnectionHelper.getConnection(); PreparedStatement pst = con.prepareStatement(sql)) {
@@ -36,7 +36,7 @@ public class SupervivienteDAO {
 				while (rs.next()) { // itero sobre los resultados de la consulta SQL
 
 					// creamos un nuevo Objeto y lo seteamos con los valores del RS
-					Superviviente p = new Superviviente();
+					Asesino p = new Asesino();
 
 					// cogemos los valres de las columnas
 					int colId = rs.getInt("id");
@@ -67,13 +67,13 @@ public class SupervivienteDAO {
 	 * Consulta la tabla 'participante' para recuperar todos y devolverlos en una
 	 * coleccion
 	 * 
-	 * @return Lista con todos los supervivientes de la bbdd
+	 * @return Lista con todos los asesinos de la bbdd
 	 * @throws Exception
 	 */
-	public static ArrayList<Superviviente> getAll() {
+	public static ArrayList<Asesino> getAll() {
 
-		ArrayList<Superviviente> coleccion = new ArrayList<Superviviente>();
-		String sql = "SELECT id, nombre, historia, imagen FROM superviviente ORDER BY id ASC; ";
+		ArrayList<Asesino> coleccion = new ArrayList<Asesino>();
+		String sql = "SELECT id, nombre, historia, imagen FROM asesino ORDER BY id ASC; ";
 
 		try (
 
@@ -86,7 +86,7 @@ public class SupervivienteDAO {
 			while (rs.next()) { // itero sobre los resultados de la consulta SQL
 
 				// creamos un nuevo Objeto y lo seteamos con los valores del RS
-				Superviviente p = new Superviviente();
+				Asesino p = new Asesino();
 
 				// cogemos los valres de las columnas
 				int colId = rs.getInt("id");
@@ -114,13 +114,13 @@ public class SupervivienteDAO {
 	/**
 	 * Buscamos un participante por su identificador
 	 * 
-	 * @param id int identificador del supervivientes
+	 * @param id int identificador del asesinos
 	 * @return Participante con datos si encuentra, NULL si no lo encuentra
 	 */
-	public static Superviviente getById(int id) {
+	public static Asesino getById(int id) {
 
-		Superviviente p = null;
-		String sql = "SELECT id,nombre,historia,imagen FROM Superviviente WHERE id = ?; ";
+		Asesino p = null;
+		String sql = "SELECT id,nombre,historia,imagen FROM Asesino WHERE id = ?; ";
 
 		try (Connection con = ConnectionHelper.getConnection(); PreparedStatement pst = con.prepareStatement(sql)) {
 
@@ -135,7 +135,7 @@ public class SupervivienteDAO {
 					String colHistoria = rs.getString("historia");
 					String colImagen = rs.getString("imagen");
 
-					p = new Superviviente();
+					p = new Asesino();
 					p.setId(colId);
 					p.setNombre(colNombre);
 					p.setHistoria(colHistoria);
@@ -160,7 +160,7 @@ public class SupervivienteDAO {
 	public static boolean delete(int id) throws Exception {
 
 		boolean eliminado = false;
-		String sql = "DELETE FROM superviviente WHERE id = ?;";
+		String sql = "DELETE FROM asesino WHERE id = ?;";
 		try (Connection con = ConnectionHelper.getConnection(); PreparedStatement pst = con.prepareStatement(sql)) {
 
 			pst.setInt(1, id);
@@ -179,9 +179,9 @@ public class SupervivienteDAO {
 	 * @return true si lo inserta, false en caso contrario
 	 * @throws Exception si el email ya existe
 	 */
-	public static boolean insert(Superviviente p) throws Exception {
+	public static boolean insert(Asesino p) throws Exception {
 		boolean insertado = false;
-		String sql = "INSERT INTO superviviente (nombre,historia,imagen) VALUES (?,?,?); ";
+		String sql = "INSERT INTO asesino (nombre,historia,imagen) VALUES (?,?,?); ";
 
 		try (Connection con = ConnectionHelper.getConnection(); PreparedStatement pst = con.prepareStatement(sql)) {
 
@@ -205,9 +205,9 @@ public class SupervivienteDAO {
 	 * @return true si modifica, false en caso contrario
 	 * @throws Exception si el email ya existe en la tabla
 	 */
-	public static boolean update(Superviviente p) throws Exception {
+	public static boolean update(Asesino p) throws Exception {
 		boolean modificado = false;
-		String sql = "UPDATE Superviviente SET nombre = ? ,historia = ?, imagen = ?	WHERE id = ?;";
+		String sql = "UPDATE Asesino SET nombre = ? ,historia = ?, imagen = ?	WHERE id = ?;";
 		try (Connection con = ConnectionHelper.getConnection(); PreparedStatement pst = con.prepareStatement(sql)) {
 
 			pst.setString(1, p.getNombre());

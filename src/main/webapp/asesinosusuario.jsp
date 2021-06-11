@@ -19,9 +19,9 @@ document.getElementById("mas").style.display="inline";
 </script>
 
 <main class="container">
-	<h1>${fn:length(supervivientes)} Supervivientes</h1>
+	<h1>${fn:length(asesinos)} Asesinos</h1>
 
-	<form action="supervivienteslista" method="get">
+	<form action="asesinoslista" method="get">
 		<div class="input-group">
 			<div class="form-outline">
 				<input type="search" name="filtro" value="${filtro}"
@@ -33,7 +33,7 @@ document.getElementById("mas").style.display="inline";
 		</div>
 	</form>
 <div id="contenedor-cartas">
-	<c:forEach var="pIteracion" items="${supervivientes}">
+	<c:forEach var="pIteracion" items="${asesinos}">
 			<div class="card">	<img src="${pIteracion.imagen}" alt="imagen avatar usuario" class="">
 				<div class="card-body">
 					<h5 class="card-title">${pIteracion.nombre}</h5>

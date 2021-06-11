@@ -23,7 +23,7 @@
                        class="form-control" 
                        placeholder="Password" >
 
-                <input type="submit" value="Enviar" class="btn btn-block btn-primary mt-4">
+                <input type="submit" value="Enviar" class="btn btn-block btn-dark mt-4">
         </form>
 
 
