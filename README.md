@@ -51,9 +51,9 @@ Habra un unico rol, Administrador:
 
 -Administrador   **[admin,admin]** : Permisos Totales para cambiar cualquier asesino y superviviente.
 
-#### UI de asesino para administrador con rol = 2
-![UI para usuario administrador](https://github.com/RaulGangar/ProyectoFinal/blob/master/Captura3.JPG)
 #### UI de superviviente para administrador con rol = 2
+![UI para usuario administrador](https://github.com/RaulGangar/ProyectoFinal/blob/master/Captura3.JPG)
+#### UI de asesino para administrador con rol = 2
 ![UI para usuario administrador](https://github.com/RaulGangar/ProyectoFinal/blob/master/Captura4.JPG)
 
 #### UI de asesino para cualquier visitante de la pagina
