@@ -1,10 +1,10 @@
-# CMS Participantes
+# Dead By Daylight Database
 
 Proyecto Web **Java EE** siguiendo el patrón de **MVC** contra una bbdd **sqlite**
 CMS para gestionar diferentes tablas de la bbdd. 
 
 
-![screenshot 1]( screenshot1.jpg?raw=true)
+![screenshot 1]( https://github.com/RaulGangar/ProyectoFinal/blob/master/Captura1.JPG)
 
 
 ## Técnologia
@@ -18,7 +18,7 @@ CMS para gestionar diferentes tablas de la bbdd.
 - FontAwesome 5.15.3
 
 
-Para ver mas detalles sobre las depencias (jars) de este proyecto mirar el [pom.xml](https://github.com/elorrieta-errekamari-institutua/cms_participantes/blob/master/pom.xml)
+Para ver mas detalles sobre las depencias (jars) de este proyecto mirar el [pom.xml](https://github.com/RaulGangar/ProyectoFinal/blob/master/pom.xml)
 
 ## Instalación Proyecto
 
