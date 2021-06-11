@@ -10,7 +10,7 @@ import com.elorrieta.cms.modelo.Superviviente;
 /**
  * Clase encargada relacionar el POJO con la Tabla DAO Data Access Object
  * 
- * @author Admin
+ * @author Raul Alava
  *
  */
 public class SupervivienteDAO {
@@ -64,11 +64,10 @@ public class SupervivienteDAO {
 	}
 
 	/**
-	 * Consulta la tabla 'participante' para recuperar todos y devolverlos en una
+	 * Consulta la tabla 'supervivientes' para recuperar todos y devolverlos en una
 	 * coleccion
 	 * 
 	 * @return Lista con todos los supervivientes de la bbdd
-	 * @throws Exception
 	 */
 	public static ArrayList<Superviviente> getAll() {
 
@@ -112,10 +111,10 @@ public class SupervivienteDAO {
 	}
 
 	/**
-	 * Buscamos un participante por su identificador
+	 * Buscamos un supervivientes por su identificador
 	 * 
 	 * @param id int identificador del supervivientes
-	 * @return Participante con datos si encuentra, NULL si no lo encuentra
+	 * @return supervivientes con datos si encuentra, NULL si no lo encuentra
 	 */
 	public static Superviviente getById(int id) {
 
@@ -151,7 +150,7 @@ public class SupervivienteDAO {
 	}
 
 	/**
-	 * Elimina un particpante por su identificador
+	 * Elimina un supervivientes por su identificador
 	 * 
 	 * @param id int identificador
 	 * @return true si elimina, false en caso contrario
@@ -173,9 +172,9 @@ public class SupervivienteDAO {
 	}
 
 	/**
-	 * Inserta un nuevo Participante
+	 * Inserta un nuevo supervivientes
 	 * 
-	 * @param p Participante con los datos nuevos a insertar
+	 * @param p superviviente con los datos nuevos a insertar
 	 * @return true si lo inserta, false en caso contrario
 	 * @throws Exception si el email ya existe
 	 */
@@ -199,9 +198,9 @@ public class SupervivienteDAO {
 	}
 
 	/**
-	 * Modifica un Participante
+	 * Modifica un supervivientes
 	 * 
-	 * @param p Participante con los datos a modificar, importante que tenga un id
+	 * @param p superviviente con los datos a modificar, importante que tenga un id
 	 * @return true si modifica, false en caso contrario
 	 * @throws Exception si el email ya existe en la tabla
 	 */

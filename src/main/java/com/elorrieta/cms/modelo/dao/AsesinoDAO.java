@@ -10,7 +10,7 @@ import com.elorrieta.cms.modelo.Asesino;
 /**
  * Clase encargada relacionar el POJO con la Tabla DAO Data Access Object
  * 
- * @author Admin
+ * @author Raul Alava
  *
  */
 public class AsesinoDAO {
@@ -64,11 +64,10 @@ public class AsesinoDAO {
 	}
 
 	/**
-	 * Consulta la tabla 'participante' para recuperar todos y devolverlos en una
+	 * Consulta la tabla 'asesino' para recuperar todos y devolverlos en una
 	 * coleccion
 	 * 
 	 * @return Lista con todos los asesinos de la bbdd
-	 * @throws Exception
 	 */
 	public static ArrayList<Asesino> getAll() {
 
@@ -79,16 +78,14 @@ public class AsesinoDAO {
 
 				Connection con = ConnectionHelper.getConnection();
 				PreparedStatement pst = con.prepareStatement(sql);
-				ResultSet rs = pst.executeQuery(); // lanza la consulta SQL y obtiene Resultados RS
+				ResultSet rs = pst.executeQuery();
 
 		) {
 
-			while (rs.next()) { // itero sobre los resultados de la consulta SQL
+			while (rs.next()) {
 
-				// creamos un nuevo Objeto y lo seteamos con los valores del RS
 				Asesino p = new Asesino();
 
-				// cogemos los valres de las columnas
 				int colId = rs.getInt("id");
 				String colNombre = rs.getString("nombre");
 				String colHistoria = rs.getString("historia");
@@ -98,11 +95,9 @@ public class AsesinoDAO {
 				p.setHistoria(colHistoria);
 				p.setImagen(rs.getString("imagen"));
 
-				// a�adir objeto al ArrayList
 				coleccion.add(p);
 
 			}
-			// fin del bucle, ya no quedan mas lineas para leer
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -112,10 +107,10 @@ public class AsesinoDAO {
 	}
 
 	/**
-	 * Buscamos un participante por su identificador
+	 * Buscamos un asesino por su identificador
 	 * 
 	 * @param id int identificador del asesinos
-	 * @return Participante con datos si encuentra, NULL si no lo encuentra
+	 * @return asesino con datos si encuentra, NULL si no lo encuentra
 	 */
 	public static Asesino getById(int id) {
 
@@ -127,9 +122,8 @@ public class AsesinoDAO {
 			pst.setInt(1, id);
 			try (ResultSet rs = pst.executeQuery()) {
 
-				while (rs.next()) { // hemos encontrado Participante por su ID
+				while (rs.next()) {
 
-					// cogemos los valres de las columnas
 					int colId = rs.getInt("id");
 					String colNombre = rs.getString("nombre");
 					String colHistoria = rs.getString("historia");
@@ -151,7 +145,7 @@ public class AsesinoDAO {
 	}
 
 	/**
-	 * Elimina un particpante por su identificador
+	 * Elimina un asesino por su identificador
 	 * 
 	 * @param id int identificador
 	 * @return true si elimina, false en caso contrario
@@ -173,9 +167,9 @@ public class AsesinoDAO {
 	}
 
 	/**
-	 * Inserta un nuevo Participante
+	 * Inserta un nuevo asesino
 	 * 
-	 * @param p Participante con los datos nuevos a insertar
+	 * @param p asesino con los datos nuevos a insertar
 	 * @return true si lo inserta, false en caso contrario
 	 * @throws Exception si el email ya existe
 	 */
@@ -199,9 +193,9 @@ public class AsesinoDAO {
 	}
 
 	/**
-	 * Modifica un Participante
+	 * Modifica un asesino
 	 * 
-	 * @param p Participante con los datos a modificar, importante que tenga un id
+	 * @param p asesino con los datos a modificar, importante que tenga un id
 	 * @return true si modifica, false en caso contrario
 	 * @throws Exception si el email ya existe en la tabla
 	 */

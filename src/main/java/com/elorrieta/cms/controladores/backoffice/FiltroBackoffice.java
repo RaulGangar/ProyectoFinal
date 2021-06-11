@@ -55,12 +55,8 @@ public class FiltroBackoffice implements Filter {
 			System.out.println("Esta intentando acceder sin logearse o ha caducado la session");
 			res.sendRedirect(req.getContextPath() + "/index.jsp");
 
-		} else if (u.getRol() == Usuario.ROL_USUARIO) {
-			System.out.println("No tienes permiso para acceder al backoffice");
-			res.sendRedirect(req.getContextPath() + "/index.jsp");
-
 		} else { // usuario administrador
-			System.out.println("Pase usted señor@ administrador");
+			System.out.println("Pase usted seï¿½or@ administrador");
 			// sigue la ejecucion del programa
 			chain.doFilter(request, response);
 		}

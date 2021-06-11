@@ -6,13 +6,20 @@ import java.sql.ResultSet;
 
 import com.elorrieta.cms.modelo.Usuario;
 
+/**
+ * Controlador del usuario
+ * 
+ * @author Raul Alava
+ *
+ */
+
 public class UsuarioDAO {
 
 	/**
-	 * Busca en la bbdd el usuario por su nombre y password
+	 * Busca en la base de datos el usuario por su nombre y password
 	 * 
 	 * @param nombre   String nombre del usuario
-	 * @param password String con su contraseña
+	 * @param password String con su contraseï¿½a
 	 * @return usuario con datos si existe, null su no existe
 	 */
 	public static Usuario login(String nombre, String password) {
