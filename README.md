@@ -1,7 +1,7 @@
 # Dead By Daylight Database
 
-Proyecto Web **Java EE** siguiendo el patrón de **MVC** contra una bbdd **sqlite**
-CMS para gestionar diferentes tablas de la bbdd. 
+Proyecto Web **Java EE** siguiendo el patrón de **MVC** contra una base de datos **sqlite**
+CMS para gestionar diferentes tablas de la base de datos.
 
 
 ![screenshot 1]( https://github.com/RaulGangar/ProyectoFinal/blob/master/Captura1.JPG)
@@ -30,44 +30,45 @@ Esperar unos segundos a que configure el proyecto
 ## configuración de la bbdd
 
 La base de datos es el fichero **cms.db**
-
-Para realizar la conexión a la bbdd cambiar el siguiente fichero **src\main\java\com\elorrieta\cms\modelo\dao\ConnectionHelper.java**
-Solo debemos cambiar la siguiente variable con la ruta de la bbdd 
-
+Para realizar la conexion a la base de datos deberemos cmbiar el siguiente fichero **src\main\java\com\elorrieta\cms\modelo\dao\ConnectionHelper.java**
+Solo debemos cambiar la siguiente variable con la ruta de la base de datos.
 `
-private static final String DIRECCION_BBDD = "jdbc:sqlite:C:\\desarrolloJava\\workspace\\cms\\cms.db";
+private static final String DIRECCION_BBDD = "jdbc:sqlite:C:\\desarrolloJava\\workspace\\cms\\dbd.db";
 `
 
 
-![entidad relacion]( screenshot2.jpg?raw=true)
+![entidad relacion]( https://github.com/RaulGangar/ProyectoFinal/blob/master/Captura2.JPG)
 
 
 
 ## Ejecutar Proyecto
 
-Al ser un proyecto web necesitamos un servidor de aplicaciones, en nuestro caso recomendamos **Apache Tomcat 8.5**.
+Tratandose de un proyecto web emplearemos un servidor de aplicacione, en nuestro caso sera Apache Tomcat 8.5.
 
-Podemos navegar por los diferentes enlaces de la cabecera puesto que son públicos, por ejemplo JavaDoc y Calculadora.
-Si queremos entrar a los paneles de Administración deberemos *Iniciar Sesión*.
-Tenemos dos roles diferentes:
+Podemos navegar entre asesinos y supervivientes desde el menu de la cabecera.
+Si queremos modificar algo de asesinos y supervivientes deberemos entrar en los paneles de Administracion desde *Iniciar sesion*
+Habra un unico rol, Administrador:
 
-1. Administrador   **[admin,admin]** : Permisos Totales para cambiar cualquier participante
-2. Usuario Normal  **[pepe, 12345]** : Solo podemos ver los datos del usuario
+-Administrador   **[admin,admin]** : Permisos Totales para cambiar cualquier asesino y superviviente.
 
-#### UI para usuario administrador con rol = 2
-![UI para usuario administrador]( screenshot3.jpg?raw=true)
+#### UI de asesino para administrador con rol = 2
+![UI para usuario administrador](https://github.com/RaulGangar/ProyectoFinal/blob/master/Captura3.JPG)
+#### UI de superviviente para administrador con rol = 2
+![UI para usuario administrador](https://github.com/RaulGangar/ProyectoFinal/blob/master/Captura4.JPG)
 
-#### UI para usuario normal con rol = 1
-![UI para usuario normal]( screenshot4.jpg?raw=true)
+#### UI de asesino para cualquier visitante de la pagina
+![UI para usuario normal](https://github.com/RaulGangar/ProyectoFinal/blob/master/Captura5.JPG)
+#### UI de superviviente para cualquier visitante de la pagina
+![UI para usuario normal](https://github.com/RaulGangar/ProyectoFinal/blob/master/Captura6.JPG)
 
 ## Estructura Clases del proyecto
 
-Interesante consultar la documentacion **JavaDoc API**
-
+Recomendamos consultar la documentacion **JavaDoc API**
+ 
 Model Vista Controlador
 
 - **vista** puedes encontrar las JSPs, css, imagenes, js en `src/main/webapp`
-- **modelo** Los DAOs se encargan de conectar Java con la bbdd son los encargados de las consultas SQL `src/main/java/com/elorrieta/cms/modelo`
+- **modelo** Los DAOs se encargan de conectar Java con la base de datos son los encargados de las consultas SQL `src/main/java/com/elorrieta/cms/modelo`
 - **controlador** Controladores o Servlets `src/main/java/com/elorrieta/cms/controladores`
 
-![estructura proyecto]( screenshot5.jpg?raw=true)
+![estructura proyecto]( https://github.com/RaulGangar/ProyectoFinal/blob/master/Captura7.JPG)
